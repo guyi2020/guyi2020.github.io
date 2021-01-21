@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP on 古一 - 个人博客网站</title>
-    <link>http://localhost:1313/tags/http/</link>
+    <link>https://guyi2020.github.io/tags/http/</link>
     <description>Recent content in HTTP on 古一 - 个人博客网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>古一</copyright>
-    <lastBuildDate>Wed, 20 Jan 2021 14:24:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jan 2021 14:24:30 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP 报文信息</title>
-      <link>http://localhost:1313/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</link>
+      <link>https://guyi2020.github.io/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Wed, 20 Jan 2021 14:24:30 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</guid>
+      <guid>https://guyi2020.github.io/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</guid>
       <description>1. HTTP 报文 用于 HTTP 协议交互的信息被称为 HTTP 报文。请求端（客户端）的 HTTP 报文叫做请求报文，响应端（服务器端）的叫做响应报文。 HTTP 报文本身是由多行（用 CR+LF 作换行符）数据构成的字符串文本。
 报文首部
 服务器端或客户端需要处理的请求或响应的内容以及属性。
@@ -30,10 +30,10 @@
     
     <item>
       <title>简单的 HTTP 协议</title>
-      <link>http://localhost:1313/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</link>
+      <link>https://guyi2020.github.io/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Tue, 19 Jan 2021 14:24:30 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</guid>
+      <guid>https://guyi2020.github.io/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</guid>
       <description>1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。
 HTTP请求报文 1 2 3 4 5 6 7  POST /user HTTP/1.1 //请求行 Host: www.user.com Content-Type: application/x-www-form-urlencoded Connection: Keep-Alive User-agent: Mozilla/5.0. //以上是首部行 （此处必须有一空行） //空行分割header和请求内容 name=world 请求体   POST
 起始行开头的POST表示请求访问服务器的类型，称为方法。
@@ -47,10 +47,10 @@ HTTP/1.1，即 HTTP 的版本 号，用来提示客户端使用的 HTTP 协议�
     
     <item>
       <title>了解 Web 及网络基础</title>
-      <link>http://localhost:1313/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <link>https://guyi2020.github.io/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 18 Jan 2021 16:25:17 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://guyi2020.github.io/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
       <description>1. TCP/IP协议分层 协议分层
   应用层
   传输层
