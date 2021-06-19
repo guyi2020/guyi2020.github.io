@@ -2,116 +2,161 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 古一 - 个人博客</title>
-    <link>http://echo2017.gitee.io/blog/tags/</link>
+    <link>https://guyi2020.github.io/tags/</link>
     <description>Recent content in Tags on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 May 2021 13:08:00 +0800</lastBuildDate><atom:link href="http://echo2017.gitee.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://guyi2020.github.io/tags/docker/</link>
+      <pubDate>Tue, 15 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://guyi2020.github.io/tags/mongodb/</link>
+      <pubDate>Tue, 15 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://guyi2020.github.io/tags/git/</link>
+      <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://guyi2020.github.io/tags/nodejs/</link>
+      <pubDate>Thu, 10 Jun 2021 13:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>PHP</title>
-      <link>http://echo2017.gitee.io/blog/tags/php/</link>
-      <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
+      <link>https://guyi2020.github.io/tags/php/</link>
+      <pubDate>Thu, 27 May 2021 11:11:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/php/</guid>
+      <guid>https://guyi2020.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RabbitMQ</title>
-      <link>http://echo2017.gitee.io/blog/tags/rabbitmq/</link>
-      <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
+      <link>https://guyi2020.github.io/tags/rabbitmq/</link>
+      <pubDate>Thu, 27 May 2021 11:11:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/rabbitmq/</guid>
+      <guid>https://guyi2020.github.io/tags/rabbitmq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>面试题</title>
-      <link>http://echo2017.gitee.io/blog/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <link>https://guyi2020.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
       <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <guid>https://guyi2020.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>http://echo2017.gitee.io/blog/tags/mysql/</link>
+      <link>https://guyi2020.github.io/tags/mysql/</link>
       <pubDate>Sun, 23 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/mysql/</guid>
+      <guid>https://guyi2020.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Composer</title>
+      <link>https://guyi2020.github.io/tags/composer/</link>
+      <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/tags/composer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>http://echo2017.gitee.io/blog/tags/http/</link>
+      <link>https://guyi2020.github.io/tags/http/</link>
       <pubDate>Wed, 20 Jan 2021 14:24:30 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/http/</guid>
+      <guid>https://guyi2020.github.io/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kafka</title>
-      <link>http://echo2017.gitee.io/blog/tags/kafka/</link>
+      <link>https://guyi2020.github.io/tags/kafka/</link>
       <pubDate>Sun, 27 Dec 2020 21:40:17 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/kafka/</guid>
+      <guid>https://guyi2020.github.io/tags/kafka/</guid>
       <description></description>
     </item>
     
     <item>
       <title>preview</title>
-      <link>http://echo2017.gitee.io/blog/tags/preview/</link>
+      <link>https://guyi2020.github.io/tags/preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/preview/</guid>
+      <guid>https://guyi2020.github.io/tags/preview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tag-3</title>
-      <link>http://echo2017.gitee.io/blog/tags/tag-3/</link>
+      <link>https://guyi2020.github.io/tags/tag-3/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/tag-3/</guid>
+      <guid>https://guyi2020.github.io/tags/tag-3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Theme preview</title>
-      <link>http://echo2017.gitee.io/blog/tags/theme-preview/</link>
+      <link>https://guyi2020.github.io/tags/theme-preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/theme-preview/</guid>
+      <guid>https://guyi2020.github.io/tags/theme-preview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>http://echo2017.gitee.io/blog/tags/shortcodes/</link>
+      <link>https://guyi2020.github.io/tags/shortcodes/</link>
       <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/shortcodes/</guid>
+      <guid>https://guyi2020.github.io/tags/shortcodes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syntax Highlighting</title>
-      <link>http://echo2017.gitee.io/blog/tags/syntax-highlighting/</link>
+      <link>https://guyi2020.github.io/tags/syntax-highlighting/</link>
       <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/syntax-highlighting/</guid>
+      <guid>https://guyi2020.github.io/tags/syntax-highlighting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tag-5</title>
-      <link>http://echo2017.gitee.io/blog/tags/tag-5/</link>
+      <link>https://guyi2020.github.io/tags/tag-5/</link>
       <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
       
-      <guid>http://echo2017.gitee.io/blog/tags/tag-5/</guid>
+      <guid>https://guyi2020.github.io/tags/tag-5/</guid>
       <description></description>
     </item>
     

@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="古一" /><meta name="description" content="RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。" /><meta name="keywords" content="古一, 博客, 网站" />
+<meta name="author" content="古一" /><meta name="description" content="1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑" /><meta name="keywords" content="古一, 博客, 网站" />
 
 
 
@@ -26,33 +26,33 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="http://echo2017.gitee.io/blog/post/rabbitmq/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
-<link rel="manifest" href="/blog/manifest.json">
-<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://guyi2020.github.io/post/rabbitmq/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/blog/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="RabbitMQ消息队列" />
-<meta property="og:description" content="RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。" />
+<meta property="og:description" content="1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://echo2017.gitee.io/blog/post/rabbitmq/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://guyi2020.github.io/post/rabbitmq/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-25T13:08:00&#43;08:00" />
-<meta property="article:modified_time" content="2021-05-25T13:08:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-27T14:15:00&#43;08:00" />
 
 <meta itemprop="name" content="RabbitMQ消息队列">
-<meta itemprop="description" content="RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。"><meta itemprop="datePublished" content="2021-05-25T13:08:00&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-25T13:08:00&#43;08:00" />
-<meta itemprop="wordCount" content="109">
+<meta itemprop="description" content="1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑"><meta itemprop="datePublished" content="2021-05-25T13:08:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-27T14:15:00&#43;08:00" />
+<meta itemprop="wordCount" content="1257">
 <meta itemprop="keywords" content="PHP,RabbitMQ," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RabbitMQ消息队列"/>
-<meta name="twitter:description" content="RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。"/>
+<meta name="twitter:description" content="1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -67,7 +67,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/blog/" class="logo">古一</a>
+    <a href="/" class="logo">古一</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -77,15 +77,15 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="/blog/">
+    <a href="/">
         <li class="mobile-menu-item">首页</li>
-      </a><a href="/blog/post/">
+      </a><a href="/post/">
         <li class="mobile-menu-item">文章</li>
-      </a><a href="/blog/tags/">
+      </a><a href="/tags/">
         <li class="mobile-menu-item">标签</li>
-      </a><a href="/blog/categories/">
+      </a><a href="/categories/">
         <li class="mobile-menu-item">分类</li>
-      </a><a href="/blog/about/">
+      </a><a href="/about/">
         <li class="mobile-menu-item">关于</li>
       </a>
   </ul>
@@ -98,7 +98,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/blog/" class="logo">古一</a>
+  <a href="/" class="logo">古一</a>
 </div>
 
 
@@ -108,15 +108,15 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/blog/">首页</a>
+        <a class="menu-item-link" href="/">首页</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/blog/post/">文章</a>
+        <a class="menu-item-link" href="/post/">文章</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/blog/tags/">标签</a>
+        <a class="menu-item-link" href="/tags/">标签</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/blog/categories/">分类</a>
+        <a class="menu-item-link" href="/categories/">分类</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/blog/about/">关于</a>
+        <a class="menu-item-link" href="/about/">关于</a>
       </li>
   </ul>
 </nav>
@@ -134,10 +134,10 @@
       <div class="post-meta">
         <span class="post-time"> 2021-05-25 </span>
         <div class="post-category">
-            <a href="/blog/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 109 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 1257 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
     </header>
@@ -149,8 +149,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-docker安装rabbitmq">1. Docker安装RabbitMQ</a></li>
-        <li><a href="#2-创建容器并运行">2. 创建容器并运行</a></li>
+        <li><a href="#1-rabbitmq简介">1. RabbitMQ简介</a></li>
+        <li><a href="#2-rabbitmq结构">2. RabbitMQ结构</a></li>
+        <li><a href="#3-docker安装rabbitmq">3. Docker安装RabbitMQ</a></li>
+        <li><a href="#4-创建容器并运行">4. 创建容器并运行</a></li>
+        <li><a href="#5-浏览器访问">5. 浏览器访问</a></li>
+        <li><a href="#6-安装php扩展amqp扩展">6. 安装PHP扩展amqp扩展</a></li>
+        <li><a href="#7-代码">7. 代码</a></li>
       </ul>
     </li>
   </ul>
@@ -158,17 +163,365 @@
   </div>
 </div>
     <div class="post-content">
-      <blockquote>
-<p>RabbitMQ简介
-一款消息中间件</p>
-</blockquote>
-<h2 id="1-docker安装rabbitmq">1. Docker安装RabbitMQ</h2>
+      <h2 id="1-rabbitmq简介">1. RabbitMQ简介</h2>
+<p>消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑处理。对于消耗较大的请求，可以立马返回处理结果。减少服务器压力。为各个子系统之间解耦和异步处理。</p>
+<h2 id="2-rabbitmq结构">2. RabbitMQ结构</h2>
+<p><img src="/blog/uploads/20210120/rabbitmq2.png" alt="Local Picture" title="RabbitMQ"></p>
+<p>RabbitMQ（消息队列）主要来确保消息的分发是，<strong>Exchange</strong>（交换机）、<strong>RoutingKey</strong>（路由）、<strong>Queue</strong>（队列）。从上面的图也可以看出来。 处理消息的接收、分发，主要在Broker模块中。</p>
+<ul>
+<li><strong>Exchange</strong> 所有生产消息的入口都是到交换机这里。exchange通过进来的路由（RoutingKey），去和已binding的规则进行匹配，找到指定的队列。</li>
+<li><strong>RoutingKey</strong> 我的理解，这里相当于一把钥匙。而binding的操作相当于一把锁头。</li>
+<li><strong>Queue</strong> 消息的存放区域，等到消费者来取。</li>
+<li><strong>Binding Exchange</strong>和<strong>Queue</strong>之间的一个绑定。</li>
+</ul>
+<h2 id="3-docker安装rabbitmq">3. Docker安装RabbitMQ</h2>
 <p><code>docker pull rabbitmq:management</code></p>
-<h2 id="2-创建容器并运行">2. 创建容器并运行</h2>
+<h2 id="4-创建容器并运行">4. 创建容器并运行</h2>
 <blockquote>
 <p>15672是管理界面的端口，5672是服务的端口。这里顺便将管理系统的用户名和密码设置为admin admin</p>
 </blockquote>
 <p><code>docker run -dit --name Myrabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:managemen</code></p>
+<h2 id="5-浏览器访问">5. 浏览器访问</h2>
+<p><img src="/blog/uploads/20210120/rabbitmq1.png" alt="Local Picture" title="RabbitMQ"></p>
+<h2 id="6-安装php扩展amqp扩展">6. 安装PHP扩展amqp扩展</h2>
+<blockquote>
+<p>注意：由于 docker 无法使用 vi，cmake，wget 等命令问题，则更新源 <code>apt-get update</code></p>
+</blockquote>
+<ol>
+<li>
+<p>安装amqp的依赖包，librabbitmq</p>
+<p><code>apt-get install librabbitmq-dev</code></p>
+</li>
+<li>
+<p>如果执行命令后报错</p>
+<p><code>Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the   system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY   OPENSSL_INCLUDE_DIR) (Required is at least version &quot;0.9.8&quot;)</code></p>
+<p>则安装依赖包 <code>apt-get install libssl-dev</code></p>
+</li>
+<li>
+<p>安装amqp扩展</p>
+<p><code>pecl install amqp</code></p>
+</li>
+<li>
+<p>php.ini添加php扩展</p>
+<p><code>extension = amqp.so</code></p>
+</li>
+<li>
+<p>重启PHP，查看是否安装成功，打印phpinfo</p>
+<p><img src="/blog/uploads/20210120/phpinfo1.png" alt="Local Picture" title="phpinfo"></p>
+</li>
+</ol>
+<h2 id="7-代码">7. 代码</h2>
+<ol>
+<li>生产者代码 producer.php</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-PHP" data-lang="PHP"><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">try</span> <span class="p">{</span>
+
+<span class="nx">​</span>    <span class="c1">// 注意： host 是docker rabbitmq容器地址
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="c1">// 可查容器ip地址命令： docker inspect --format=&#39;{{.NetworkSettings.IPAddress}}&#39; Myrabbitmq 
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="c1">// 定义mq连接信息
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$amq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPConnection</span><span class="p">([</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;172.17.0.2&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;vhost&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">5672</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;login&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span>
+
+<span class="nx">​</span>    <span class="p">]);</span>
+
+
+
+<span class="nx">​</span>    <span class="c1">// 连接mq
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$amq</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+
+<span class="nx">​</span>    <span class="c1">// 通过mq连接创建信道
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$channel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPChannel</span><span class="p">(</span><span class="nv">$amq</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 通过信道创建交换器对象
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 设置交换器名称
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;product_exchange&#39;</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 设置交换器类型为direct
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_DIRECT</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 声明交换器
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declareExchange</span><span class="p">();</span>
+
+<span class="nx">​</span>    <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;hello world&#39;</span>
+
+<span class="nx">​</span>    <span class="p">];</span>
+
+<span class="nx">​</span>    <span class="nv">$data</span> <span class="o">=</span> <span class="nx">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 发布消息
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;self_define_routing_key&#39;</span><span class="p">);</span>
+
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="nx">​</span>    <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>消费者代码 consume.php</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">try</span> <span class="p">{</span>
+
+<span class="nx">​</span>    <span class="c1">// 交换器名称
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchangeName</span> <span class="o">=</span> <span class="s1">&#39;product_exchange&#39;</span><span class="p">;</span>
+
+<span class="nx">​</span>    <span class="c1">// 队列名称
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$queueName</span> <span class="o">=</span> <span class="s1">&#39;createProduct&#39;</span><span class="p">;</span>
+
+<span class="nx">​</span>    <span class="c1">// RouteKey
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$routeKey</span> <span class="o">=</span> <span class="s1">&#39;self_define_routing_key&#39;</span><span class="p">;</span>
+
+<span class="nx">​</span>    <span class="c1">// 定义mq连接信息
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$amq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPConnection</span><span class="p">([</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;172.17.0.2&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;vhost&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">5672</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;login&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+
+<span class="nx">​</span>        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span>
+
+<span class="nx">​</span>    <span class="p">]);</span>
+
+<span class="nx">​</span>    <span class="c1">// 连接mq
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$amq</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+
+<span class="nx">​</span>    <span class="c1">// 通过mq连接创建信道
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$channel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPChannel</span><span class="p">(</span><span class="nv">$amq</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 通过信道创建交换器对象
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 设置交换器名称
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="nv">$exchangeName</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="c1">// 声明自己监听哪个队列
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPQueue</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="nv">$queueName</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">declareQueue</span><span class="p">();</span>
+
+<span class="nx">​</span>    <span class="c1">//绑定监听
+</span><span class="c1"></span>
+<span class="nx">​</span>    <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="nv">$exchangeName</span><span class="p">,</span><span class="nv">$routeKey</span><span class="p">);</span>
+
+<span class="nx">​</span>    <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">consume</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$envelope</span><span class="p">,</span> <span class="nv">$queue</span><span class="p">){</span>
+
+<span class="nx">​</span>          <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$envelope</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">();</span>
+
+<span class="nx">​</span>          <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+
+<span class="nx">​</span>          <span class="c1">//回应ack
+</span><span class="c1"></span>
+<span class="nx">​</span>          <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">ack</span><span class="p">(</span><span class="nv">$envelope</span><span class="o">-&gt;</span><span class="na">getDeliveryTag</span><span class="p">());</span>
+
+<span class="nx">​</span>    <span class="p">});</span> <span class="c1">//阻塞监听
+</span><span class="c1"></span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="nx">​</span>    <span class="nx">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Please keep in mind that this and other tutorials are, well, tutorials. They demonstrate one new concept at a time and may intentionally oversimplify some things and leave out others. For example topics such as connection management, error handling, connection recovery, concurrency and metric collection are largely omitted for the sake of brevity. Such simplified code should not be considered production ready.</p>
 
     </div>
 
@@ -180,7 +533,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-05-25
+        2021-05-27
         
     </span>
   </p>
@@ -192,16 +545,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/blog/tags/php/">PHP</a>
-          <a href="/blog/tags/rabbitmq/">RabbitMQ</a>
+          <a href="/tags/php/">PHP</a>
+          <a href="/tags/rabbitmq/">RabbitMQ</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/blog/post/php%E9%A2%98%E7%9B%AE/">
+        <a class="prev" href="/post/php%E9%A2%98%E7%9B%AE/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">PHP题目</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">
+        <a class="next" href="/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">
             <span class="next-text nav-default">MySQL主从复制</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
@@ -221,7 +574,7 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="http://echo2017.gitee.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://guyi2020.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -256,7 +609,7 @@
 
 
 
-<script type="text/javascript" src="/blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

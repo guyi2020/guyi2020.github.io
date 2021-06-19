@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://echo2017.gitee.io/blog/sitemap.xml
+Sitemap: https://guyi2020.github.io/sitemap.xml
