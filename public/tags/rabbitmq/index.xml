@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RabbitMQ on 古一 - 个人博客</title>
+    <link>http://echo2017.gitee.io/blog/tags/rabbitmq/</link>
+    <description>Recent content in RabbitMQ on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 May 2021 13:08:00 +0800</lastBuildDate><atom:link href="http://echo2017.gitee.io/blog/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RabbitMQ消息队列</title>
+      <link>http://echo2017.gitee.io/blog/post/rabbitmq/</link>
+      <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/rabbitmq/</guid>
+      <description>RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。</description>
+    </item>
+    
+  </channel>
+</rss>

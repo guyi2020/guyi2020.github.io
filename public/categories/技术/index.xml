@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 古一 - 个人博客</title>
+    <link>http://echo2017.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 May 2021 13:08:00 +0800</lastBuildDate><atom:link href="http://echo2017.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP题目</title>
+      <link>http://echo2017.gitee.io/blog/post/php%E9%A2%98%E7%9B%AE/</link>
+      <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/php%E9%A2%98%E7%9B%AE/</guid>
+      <description>业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ消息队列</title>
+      <link>http://echo2017.gitee.io/blog/post/rabbitmq/</link>
+      <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/rabbitmq/</guid>
+      <description>RabbitMQ简介 一款消息中间件 1. Docker安装RabbitMQ docker pull rabbitmq:management 2. 创建容器并运行 15672是管理界面的端口，5672是服务的端口。</description>
+    </item>
+    
+    <item>
+      <title>MySQL主从复制</title>
+      <link>http://echo2017.gitee.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
+      <pubDate>Sun, 23 May 2021 13:08:00 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
+      <description>1. 概念 MySQL数据库自身提供的主从复制功能可以方便的实现数据的多处自动备份，实现数据库的拓展。多个数据备份不仅可以加强数据的安全性，通过实</description>
+    </item>
+    
+    <item>
+      <title>MySQL中的共享锁与排他锁</title>
+      <link>http://echo2017.gitee.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</link>
+      <pubDate>Fri, 21 May 2021 13:08:00 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</guid>
+      <description>1. 概念 MySQL中的行级锁,表级锁,页级锁中介绍过，行级锁是Mysql中锁定粒度最细的一种锁，行级锁能大大减少数据库操作的冲突。行级锁分为共</description>
+    </item>
+    
+    <item>
+      <title>HTTP 报文信息</title>
+      <link>http://echo2017.gitee.io/blog/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Wed, 20 Jan 2021 14:24:30 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</guid>
+      <description>1. HTTP 报文 用于 HTTP 协议交互的信息被称为 HTTP 报文。请求端（客户端）的 HTTP 报文叫做请求报文，响应端（服务器端）的叫做响应报文。 HTTP 报文本身是由多行（用 CR+LF 作</description>
+    </item>
+    
+    <item>
+      <title>简单的 HTTP 协议</title>
+      <link>http://echo2017.gitee.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Tue, 19 Jan 2021 14:24:30 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</guid>
+      <description>1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5</description>
+    </item>
+    
+    <item>
+      <title>了解 Web 及网络基础</title>
+      <link>http://echo2017.gitee.io/blog/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 18 Jan 2021 16:25:17 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <description>1. TCP/IP协议分层 协议分层 应用层 传输层 网络层 数据链路层 提示 如果某些地方需要改动，只需要把变动的层修改逻辑。各层对外接口部分规划好，内部设</description>
+    </item>
+    
+    <item>
+      <title>消息队列</title>
+      <link>http://echo2017.gitee.io/blog/post/%E9%98%9F%E5%88%97/</link>
+      <pubDate>Sun, 27 Dec 2020 21:40:17 +0800</pubDate>
+      
+      <guid>http://echo2017.gitee.io/blog/post/%E9%98%9F%E5%88%97/</guid>
+      <description>消息队列 使用消息队列的好处 解耦 ❗ 允许独立扩展或者修改前后处理过程，只要确保它们遵守同样的接口约束 可恢复性 系统的部分组件失败时，不会危及到整个</description>
+    </item>
+    
+  </channel>
+</rss>

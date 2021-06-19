@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>简单的 HTTP 协议 - 古一 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="古一" /><meta name="description" content="1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5" /><meta name="keywords" content="古一, 博客, 网站" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="http://echo2017.gitee.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="简单的 HTTP 协议" />
+<meta property="og:description" content="1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://echo2017.gitee.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-01-19T14:24:30&#43;08:00" />
+<meta property="article:modified_time" content="2021-01-20T20:12:35&#43;08:00" />
+
+<meta itemprop="name" content="简单的 HTTP 协议">
+<meta itemprop="description" content="1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5"><meta itemprop="datePublished" content="2021-01-19T14:24:30&#43;08:00" />
+<meta itemprop="dateModified" content="2021-01-20T20:12:35&#43;08:00" />
+<meta itemprop="wordCount" content="1616">
+<meta itemprop="keywords" content="HTTP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="简单的 HTTP 协议"/>
+<meta name="twitter:description" content="1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">古一</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/blog/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">古一</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">简单的 HTTP 协议</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-19 </span>
+        <div class="post-category">
+            <a href="/blog/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 约 1616 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-http-协议用于客户端和服务器端之间的通信">1. HTTP 协议用于客户端和服务器端之间的通信</a>
+          <ul>
+            <li><a href="#http请求报文">HTTP请求报文</a></li>
+            <li><a href="#http返回报文">HTTP返回报文</a></li>
+            <li><a href="#是不保存状态的协议">是不保存状态的协议</a></li>
+            <li><a href="#http-方法">HTTP 方法</a></li>
+            <li><a href="#持久连接">持久连接</a></li>
+            <li><a href="#管线化">管线化</a></li>
+            <li><a href="#使用-cookie-的状态管理">使用 Cookie 的状态管理</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="1-http-协议用于客户端和服务器端之间的通信">1. HTTP 协议用于客户端和服务器端之间的通信</h2>
+<div class="admonition info">
+<p>请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。</p>
+</div>
+<h3 id="http请求报文">HTTP请求报文</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">POST /user HTTP/1.1      //请求行
+Host: www.user.com
+Content-Type: application/x-www-form-urlencoded
+Connection: Keep-Alive
+User-agent: Mozilla/5.0.      //以上是首部行
+（此处必须有一空行）  //空行分割header和请求内容 
+name=world   请求体
+</code></pre></td></tr></table>
+</div>
+</div><div class="admonition info"><p class="admonition-title">POST</p>
+<p>起始行开头的<strong>POST</strong>表示请求访问服务器的类型，称为方法。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">user</p>
+<p>随后的字符串 /user 指明了请求访问的资源对象， 也叫做请求 URI。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">HTTP版本号</p>
+<p>HTTP/1.1，即 HTTP 的版本 号，用来提示客户端使用的 HTTP 协议功能。</p>
+</div>
+<blockquote>
+<p>请求报文是由请求方法、请求 URI、协议版本、可选的请求首部字段和内容实体构成的。</p>
+</blockquote>
+<h3 id="http返回报文">HTTP返回报文</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">HTTP/1.1 200 OK 
+Date: Tue, 10 Jul 2020 06:50:15 GMT 
+Content-Length: 362
+Content-Type: text/html
+
+&lt;html&gt;
+...
+</code></pre></td></tr></table>
+</div>
+</div><div class="admonition info"><p class="admonition-title">HTTP版本号</p>
+<p>HTTP/1.1，表示服务器对应的 HTTP 版本。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">状态码</p>
+<p>200 OK 表示请求的处理结果的状态码（status code）和 原因短语（reason-phrase）。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">响应时间</p>
+<p>下一行显示了创建响应的日期时间，是首部 字段（header field）内的一个属性。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">主体</p>
+<p>接着以一空行分隔，之后的内容称为资源实体的主体（entity body）。</p>
+</div>
+<blockquote>
+<p>响应报文基本上由协议版本、状态码（表示请求成功或失败的数字代 码）、用以解释状态码的原因短语、可选的响应首部字段以及实体主 体构成。</p>
+</blockquote>
+<h3 id="是不保存状态的协议">是不保存状态的协议</h3>
+<div class="admonition info"><p class="admonition-title">主体</p>
+<p>使用 HTTP 协议，每当有新的请求发送时，就会有对应的新响应产 生。协议本身并不保留之前一切的请求或响应报文的信息。这是为了更快地处理大量事务，确保协议的可伸缩性，而特意把 HTTP 协议设计成如此简单的。HTTP/1.1 虽然是无状态协议，但为了实现期望的保持状态功能，于 是引入了 Cookie 技术。</p>
+</div>
+<h3 id="http-方法">HTTP 方法</h3>
+<div class="admonition info"><p class="admonition-title">GET</p>
+<p>GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器 端解析后返回响应内容。返回经过执行后的输出结果。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">POST</p>
+<p>POST 方法用来传输实体的主体。返回 submit.cgi 接收数据的处理结果。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">PUT</p>
+<p>PUT 方法用来传输文件。就像 FTP 协议的文件上传一样，要求在请 求报文的主体中包含文件内容，然后保存到请求 URI 指定的位置。响应返回状态码 204 No Content（比如 ：该 html 已存在于服务器上）。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">HEAD</p>
+<p>HEAD 方法和 GET 方法一样，只是不返回报文主体部分。用于确认 URI 的有效性及资源更新的日期时间等。不返回报文主体。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">DELETE</p>
+<p>DELETE 方法用来删除文件，是与 PUT 相反的方法。DELETE 方法按 请求 URI 删除指定的资源。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">OPTIONS</p>
+<p>用来查询针对请求 URI 指定的资源支持的方法。返回服务器支持的方法。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">TRACE</p>
+<p>让 Web 服务器端将之前的请求通信环回给客户端的方法。</p>
+</div>
+<div class="admonition info"><p class="admonition-title">CONNECT</p>
+<p>CONNECT 方法要求在与代理服务器通信时建立隧道，实现用隧道协 议进行 TCP 通信。主要使用 SSL（Secure Sockets Layer，安全套接 层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容 加 密后经网络隧道传输。</p>
+</div>
+<h3 id="持久连接">持久连接</h3>
+<blockquote>
+<p>HTTP/1.1 和一部分的 HTTP/1.0 想出了 持久连接（HTTP Persistent Connections，也称为 HTTP keep-alive 或 HTTP connection reuse）的方法。持久连接的特点是，只要任意一端 没有明确提出断开连接，则保持 TCP 连接状态。</p>
+</blockquote>
+<div class="admonition tips"><p class="admonition-title">好处</p>
+<p>持久连接的好处在于减少了 TCP 连接的重复建立和断开所造成的额 外开销，减轻了服务器端的负载。另外，减少开销的那部分时间，使 HTTP 请求和响应能够更早地结束，这样 Web 页面的显示速度也就相应提高了。</p>
+</div>
+<h3 id="管线化">管线化</h3>
+<blockquote>
+<p>持久连接使得多数请求以管线化（pipelining）方式发送成为可能。从 前发送请求后需等待并收到响应，才能发送下一个请求。管线化技术 出现后，不用等待响应亦可直接发送下一个请求。而管线化技术则比持久连接还 要快。请求数越多，时间差就越明显。</p>
+</blockquote>
+<h3 id="使用-cookie-的状态管理">使用 Cookie 的状态管理</h3>
+<blockquote>
+<p>议这个特征的同时又要解决类似的矛盾问题，于是引入 了 Cookie 技术。Cookie 技术通过在请求和响应报文中写入 Cookie 信 息来控制客户端的状态。 Cookie 会根据从服务器端发送的响应报文内的一个叫做 Set-Cookie 的 首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器 发送请求时，客户端会自动在请求报文中加入 Cookie 值后发送出 去。 服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一 个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前 的状态信息。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">古一</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-01-20
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/http/">HTTP</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/blog/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">HTTP 报文信息</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/blog/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+            <span class="next-text nav-default">了解 Web 及网络基础</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://echo2017.gitee.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>古一</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
