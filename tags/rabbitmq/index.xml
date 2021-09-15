@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RabbitMQ on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/tags/rabbitmq/</link>
+    <link>https://guyi2020.github.io/blog/tags/rabbitmq/</link>
     <description>Recent content in RabbitMQ on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 May 2021 11:11:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 May 2021 11:11:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>php-amqplib库操作RabbitMQ</title>
-      <link>https://guyi2020.github.io/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</link>
+      <link>https://guyi2020.github.io/blog/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</link>
       <pubDate>Thu, 27 May 2021 11:11:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</guid>
+      <guid>https://guyi2020.github.io/blog/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</guid>
       <description>1. composer安装php-amqplib库 composer require php-amqplib/php-amqplib 2. 生产者代码 send.php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 &amp;lt;?php require_once __DIR__.&amp;#39;/vendor/autoload.php&amp;#39;; use PhpAmqpLib\Connection\AMQPStreamConnection; use PhpAmqpLib\Message\AMQPMessage; $connection = new AMQPStreamConnection(&amp;#39;172.17.0.2&amp;#39;, 5672, &amp;#39;admin&amp;#39;, &amp;#39;admin&amp;#39;); $channel = $connection-&amp;gt;channel();</description>
     </item>
     
     <item>
       <title>RabbitMQ消息队列</title>
-      <link>https://guyi2020.github.io/post/rabbitmq/</link>
+      <link>https://guyi2020.github.io/blog/post/rabbitmq/</link>
       <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/rabbitmq/</guid>
+      <guid>https://guyi2020.github.io/blog/post/rabbitmq/</guid>
       <description>1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑</description>
     </item>
     

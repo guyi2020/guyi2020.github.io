@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swoole on 古一 - 个人博客</title>
+    <link>https://guyi2020.github.io/blog/tags/swoole/</link>
+    <description>Recent content in Swoole on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Jun 2021 09:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/swoole/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swoole安装使用</title>
+      <link>https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 22 Jun 2021 09:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&amp;#39;t forget</description>
+    </item>
+    
+  </channel>
+</rss>

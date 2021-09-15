@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/tags/git/</link>
+    <link>https://guyi2020.github.io/blog/tags/git/</link>
     <description>Recent content in Git on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git使用</title>
-      <link>https://guyi2020.github.io/post/git%E4%BD%BF%E7%94%A8/</link>
+      <link>https://guyi2020.github.io/blog/post/git%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/git%E4%BD%BF%E7%94%A8/</guid>
-      <description>新建远程分支 git push --set-upstream origin dev 注意：dev 是远程分支的名称 新建本地分支 git checkout -b dev</description>
+      <guid>https://guyi2020.github.io/blog/post/git%E4%BD%BF%E7%94%A8/</guid>
+      <description>新建远程分支 git push --set-upstream origin dev 注意：dev 是远程分支的名称 新建本地分支 git checkout -b dev 删除本地分支 git branch -d dev</description>
     </item>
     
   </channel>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Swoole安装使用 - 古一 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="古一" /><meta name="description" content="下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&amp;#39;t forget" /><meta name="keywords" content="古一, 博客, 网站" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Swoole安装使用" />
+<meta property="og:description" content="下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&#39;t forget" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-22T09:08:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-22T10:08:00&#43;08:00" />
+
+<meta itemprop="name" content="Swoole安装使用">
+<meta itemprop="description" content="下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&#39;t forget"><meta itemprop="datePublished" content="2021-06-22T09:08:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-22T10:08:00&#43;08:00" />
+<meta itemprop="wordCount" content="141">
+<meta itemprop="keywords" content="Swoole,PHP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swoole安装使用"/>
+<meta name="twitter:description" content="下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&#39;t forget"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">古一</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/blog/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">古一</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Swoole安装使用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-22 </span>
+        <div class="post-category">
+            <a href="/blog/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 约 141 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#下载swoole源码">下载Swoole源码</a></li>
+        <li><a href="#解压并进入到目录">解压并进入到目录</a></li>
+        <li><a href="#执行phpize">执行phpize</a></li>
+        <li><a href="#编译">编译</a></li>
+        <li><a href="#添加swooleso扩展并重启">添加swoole.so扩展，并重启</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <ol>
+<li>
+<h2 id="下载swoole源码">下载Swoole源码</h2>
+<p><a href="https://github.com/swoole/swoole-src/releases">https://github.com/swoole/swoole-src/releases</a></p>
+</li>
+<li>
+<h2 id="解压并进入到目录">解压并进入到目录</h2>
+<p><code>cd swoole-src-4.6.7</code></p>
+</li>
+<li>
+<h2 id="执行phpize">执行phpize</h2>
+<p><code>/Applications/MAMP/bin/php/php7.2.8/bin/phpize</code></p>
+<p>注意：PHP版本，用的是7.2以上</p>
+</li>
+<li>
+<h2 id="编译">编译</h2>
+<p><code>./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config</code></p>
+<p>执行后结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Build complete.
+   
+Don&#39;t forget to run &#39;make test&#39;.
+   
+   
+   
+Installing shared extensions:   /Applications/MAMP/bin/php/php7.2.8/lib/php/extensions/no-debug-non-zts-20170718/
+   
+Installing header files:     /Applications/MAMP/bin/php/php7.2.8/include/php/
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<h2 id="添加swooleso扩展并重启">添加swoole.so扩展，并重启</h2>
+<p><code>extension=swoole.so</code></p>
+</li>
+</ol>
+<p>./configure &ndash;with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config</p>
+<p>Brew 太慢替换Homebrew国内源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&#34;</span>
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+<span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">/Library/Taps/homebrew/homebrew-core&#34;</span>
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+brew update
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">古一</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-06-22
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/swoole/">Swoole</a>
+          <a href="/blog/tags/php/">PHP</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/blog/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php7.2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">编译安装PHP7.2</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/blog/post/php-cli%E5%92%8Cweb%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9D%97%E4%B8%8D%E4%B8%80%E8%87%B4/">
+            <span class="next-text nav-default">php-cli和web服务端加载模块不一致</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://guyi2020.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>古一</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

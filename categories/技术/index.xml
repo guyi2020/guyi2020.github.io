@@ -2,152 +2,197 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术 on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <link>https://guyi2020.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 技术 on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 09:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编译安装PHP7.2</title>
+      <link>https://guyi2020.github.io/blog/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php7.2/</link>
+      <pubDate>Thu, 24 Jun 2021 09:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85php7.2/</guid>
+      <description>1 yum -y install gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel libidn libidn-devel openssl openssl-devel openldap openldap-devel nss_ldap openldap-clients openldap-servers gd gd2 gd-devel gd2-devel perl-CPAN pcre-devel wget http://cn2.php.net/distributions/php-7.2.8.tar.gz tar -xzxvf php-7.2.8.tar.gz 1 ./configure --prefix=/usr/local/php --with-config-file-path=/etc/php --enable-fpm --enable-pcntl --enable-mysqlnd --enable-opcache --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-shmop --enable-zip --enable-ftp --enable-soap --enable-xml --enable-mbstring --disable-rpath</description>
+    </item>
+    
+    <item>
+      <title>Swoole安装使用</title>
+      <link>https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 22 Jun 2021 09:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/swoole%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+      <description>下载Swoole源码 https://github.com/swoole/swoole-src/releases 解压并进入到目录 cd swoole-src-4.6.7 执行phpize /Applications/MAMP/bin/php/php7.2.8/bin/phpize 注意：PHP版本，用的是7.2以上 编译 ./configure --with-php-config=/Applications/MAMP/bin/php/php7.2.8/bin/php-config 执行后结果： 1 2 3 4 5 6 7 8 9 Build complete. Don&amp;#39;t forget</description>
+    </item>
+    
+    <item>
+      <title>php-cli和web服务端加载模块不一致</title>
+      <link>https://guyi2020.github.io/blog/post/php-cli%E5%92%8Cweb%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9D%97%E4%B8%8D%E4%B8%80%E8%87%B4/</link>
+      <pubDate>Mon, 21 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/php-cli%E5%92%8Cweb%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9D%97%E4%B8%8D%E4%B8%80%E8%87%B4/</guid>
+      <description>php-cli php -m 注意：查找不到对应的扩展 web服务端 访问 phpinfo() 发现两者的加载模块不一致，原因就是两个端引用的配置文件不一致。 查看php-cli配置文件路径</description>
+    </item>
+    
     <item>
       <title>Docker安装MongoDB</title>
-      <link>https://guyi2020.github.io/post/docker%E5%AE%89%E8%A3%85mongodb/</link>
+      <link>https://guyi2020.github.io/blog/post/docker%E5%AE%89%E8%A3%85mongodb/</link>
       <pubDate>Tue, 15 Jun 2021 12:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/docker%E5%AE%89%E8%A3%85mongodb/</guid>
+      <guid>https://guyi2020.github.io/blog/post/docker%E5%AE%89%E8%A3%85mongodb/</guid>
       <description>下载镜像 docker pull mongo:latest 运行容器 docker run -itd --name mongo -p 27017:27017 mongo --auth 设置用户和密码 docker exec -it mongo mongo admin 创建一个名为 admin，密码为 123456 的用户 db.createUser({ user:&#39;admin&#39;,pwd:&#39;123456&#39;,roles:[ { role:&#39;userAdminAnyDatabase&#39;, db: &#39;admin&#39;},&amp;quot;readWriteAnyDatabase&amp;quot;]}); 尝试用创建用户进行连接 db.auth(&#39;admin&#39;,</description>
     </item>
     
     <item>
-      <title>Git使用</title>
-      <link>https://guyi2020.github.io/post/git%E4%BD%BF%E7%94%A8/</link>
+      <title>Docker启动容器</title>
+      <link>https://guyi2020.github.io/blog/post/docker%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8/</link>
       <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/git%E4%BD%BF%E7%94%A8/</guid>
-      <description>新建远程分支 git push --set-upstream origin dev 注意：dev 是远程分支的名称 新建本地分支 git checkout -b dev</description>
+      <guid>https://guyi2020.github.io/blog/post/docker%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8/</guid>
+      <description>启动zookeeper docker run --privileged=true -d --name zookeeper --publish 2181:2181 -d zookeeper:latest</description>
+    </item>
+    
+    <item>
+      <title>Git使用</title>
+      <link>https://guyi2020.github.io/blog/post/git%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/git%E4%BD%BF%E7%94%A8/</guid>
+      <description>新建远程分支 git push --set-upstream origin dev 注意：dev 是远程分支的名称 新建本地分支 git checkout -b dev 删除本地分支 git branch -d dev</description>
+    </item>
+    
+    <item>
+      <title>安装zookeeper扩展</title>
+      <link>https://guyi2020.github.io/blog/post/%E5%AE%89%E8%A3%85zookeeper%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/%E5%AE%89%E8%A3%85zookeeper%E6%89%A9%E5%B1%95/</guid>
+      <description>扩展下载地址 http://pecl.php.net/package/zookeeper 注意：dev 是远程分支的名称 zookeeper稳定版下载地址 https://downloads.apache.org/zookeeper/stable/ brew install automake</description>
     </item>
     
     <item>
       <title>Nodejs多版本</title>
-      <link>https://guyi2020.github.io/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</link>
+      <link>https://guyi2020.github.io/blog/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</link>
       <pubDate>Thu, 10 Jun 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://guyi2020.github.io/blog/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</guid>
       <description>1.下载安装 npm install -g n 2.下载指定版本(后面跟版本号) sudo n 14.15.0 3.下载最新版本 sudo n latest 4.显示已安装哪些版本 n ls 5.切换使用版本(后面跟版本号) sudo</description>
     </item>
     
     <item>
       <title>php-amqplib库操作RabbitMQ</title>
-      <link>https://guyi2020.github.io/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</link>
+      <link>https://guyi2020.github.io/blog/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</link>
       <pubDate>Thu, 27 May 2021 11:11:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</guid>
+      <guid>https://guyi2020.github.io/blog/post/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/</guid>
       <description>1. composer安装php-amqplib库 composer require php-amqplib/php-amqplib 2. 生产者代码 send.php 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 &amp;lt;?php require_once __DIR__.&amp;#39;/vendor/autoload.php&amp;#39;; use PhpAmqpLib\Connection\AMQPStreamConnection; use PhpAmqpLib\Message\AMQPMessage; $connection = new AMQPStreamConnection(&amp;#39;172.17.0.2&amp;#39;, 5672, &amp;#39;admin&amp;#39;, &amp;#39;admin&amp;#39;); $channel = $connection-&amp;gt;channel();</description>
     </item>
     
     <item>
       <title>PHP题目</title>
-      <link>https://guyi2020.github.io/post/php%E9%A2%98%E7%9B%AE/</link>
+      <link>https://guyi2020.github.io/blog/post/php%E9%A2%98%E7%9B%AE/</link>
       <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/php%E9%A2%98%E7%9B%AE/</guid>
+      <guid>https://guyi2020.github.io/blog/post/php%E9%A2%98%E7%9B%AE/</guid>
       <description>业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购</description>
     </item>
     
     <item>
       <title>RabbitMQ消息队列</title>
-      <link>https://guyi2020.github.io/post/rabbitmq/</link>
+      <link>https://guyi2020.github.io/blog/post/rabbitmq/</link>
       <pubDate>Tue, 25 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/rabbitmq/</guid>
+      <guid>https://guyi2020.github.io/blog/post/rabbitmq/</guid>
       <description>1. RabbitMQ简介 消息队列（Message Queue）是一种应用间的通信方式，消息发送后可以立即返回。消息使用者再从MQ中取消息进行逻辑</description>
     </item>
     
     <item>
       <title>MySQL主从复制</title>
-      <link>https://guyi2020.github.io/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
+      <link>https://guyi2020.github.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sun, 23 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
+      <guid>https://guyi2020.github.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
       <description>1. 概念 MySQL数据库自身提供的主从复制功能可以方便的实现数据的多处自动备份，实现数据库的拓展。多个数据备份不仅可以加强数据的安全性，通过实</description>
     </item>
     
     <item>
       <title>MySQL中的共享锁与排他锁</title>
-      <link>https://guyi2020.github.io/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</link>
+      <link>https://guyi2020.github.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</link>
       <pubDate>Fri, 21 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</guid>
+      <guid>https://guyi2020.github.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</guid>
       <description>1. 概念 MySQL中的行级锁,表级锁,页级锁中介绍过，行级锁是Mysql中锁定粒度最细的一种锁，行级锁能大大减少数据库操作的冲突。行级锁分为共</description>
     </item>
     
     <item>
       <title>Composer使用</title>
-      <link>https://guyi2020.github.io/post/composer%E4%BD%BF%E7%94%A8/</link>
+      <link>https://guyi2020.github.io/blog/post/composer%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/composer%E4%BD%BF%E7%94%A8/</guid>
-      <description>1. Composer 使用1.0版本 现在composer最新版本是2.0了，有下老项目就需要1.0的版本，不然是无法安装依赖的。 下载地址：https://ge</description>
+      <guid>https://guyi2020.github.io/blog/post/composer%E4%BD%BF%E7%94%A8/</guid>
+      <description>Composer 使用1.0版本 现在composer最新版本是2.0了，有下老项目就需要1.0的版本，不然是无法安装依赖的。 下载地址：https://get</description>
     </item>
     
     <item>
       <title>MAMP PRO安装PHP扩展</title>
-      <link>https://guyi2020.github.io/post/mamp_pro%E5%AE%89%E8%A3%85php%E6%89%A9%E5%B1%95/</link>
+      <link>https://guyi2020.github.io/blog/post/mamp_pro%E5%AE%89%E8%A3%85php%E6%89%A9%E5%B1%95/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/mamp_pro%E5%AE%89%E8%A3%85php%E6%89%A9%E5%B1%95/</guid>
+      <guid>https://guyi2020.github.io/blog/post/mamp_pro%E5%AE%89%E8%A3%85php%E6%89%A9%E5%B1%95/</guid>
       <description>1. 进入php的bin目录 cd /Applications/MAMP/bin/php/php7.1.20/bin 2. 执行pecl命令 ./pecl install redis ./pecl install mongodb</description>
     </item>
     
     <item>
       <title>MySQL优化</title>
-      <link>https://guyi2020.github.io/post/mysql%E4%BC%98%E5%8C%96/</link>
+      <link>https://guyi2020.github.io/blog/post/mysql%E4%BC%98%E5%8C%96/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/mysql%E4%BC%98%E5%8C%96/</guid>
+      <guid>https://guyi2020.github.io/blog/post/mysql%E4%BC%98%E5%8C%96/</guid>
       <description>1. 选择优化的数据类型 更小的数据类型 因为它们占用更少的磁盘，内存和CPU缓存，并且处理时需要的CPU周期更少。 如果无法确认哪个数据类型好，就选</description>
     </item>
     
     <item>
       <title>MySQL慢SQL问题</title>
-      <link>https://guyi2020.github.io/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</link>
+      <link>https://guyi2020.github.io/blog/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://guyi2020.github.io/blog/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</guid>
       <description>1. SQL 编写导致的慢 SQL 优化 字段类型转换导致不用索引，如字符串类型的不用引号，数字类型的用引号，这可能导致用不到索引扫描全表 不支持函数转换，字段前</description>
     </item>
     
     <item>
       <title>HTTP 报文信息</title>
-      <link>https://guyi2020.github.io/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</link>
+      <link>https://guyi2020.github.io/blog/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Wed, 20 Jan 2021 14:24:30 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</guid>
+      <guid>https://guyi2020.github.io/blog/post/http%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF/</guid>
       <description>1. HTTP 报文 用于 HTTP 协议交互的信息被称为 HTTP 报文。请求端（客户端）的 HTTP 报文叫做请求报文，响应端（服务器端）的叫做响应报文。 HTTP 报文本身是由多行（用 CR+LF 作</description>
     </item>
     
     <item>
       <title>简单的 HTTP 协议</title>
-      <link>https://guyi2020.github.io/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</link>
+      <link>https://guyi2020.github.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Tue, 19 Jan 2021 14:24:30 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</guid>
+      <guid>https://guyi2020.github.io/blog/post/%E7%AE%80%E5%8D%95%E7%9A%84-http-%E5%8D%8F%E8%AE%AE/</guid>
       <description>1. HTTP 协议用于客户端和服务器端之间的通信 请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一 端称为服务器端。 HTTP请求报文 1 2 3 4 5</description>
     </item>
     
     <item>
       <title>了解 Web 及网络基础</title>
-      <link>https://guyi2020.github.io/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+      <link>https://guyi2020.github.io/blog/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 18 Jan 2021 16:25:17 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://guyi2020.github.io/blog/post/%E4%BA%86%E8%A7%A3-web-%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
       <description>1. TCP/IP协议分层 协议分层 应用层 传输层 网络层 数据链路层 提示 如果某些地方需要改动，只需要把变动的层修改逻辑。各层对外接口部分规划好，内部设</description>
     </item>
     
     <item>
       <title>消息队列</title>
-      <link>https://guyi2020.github.io/post/%E9%98%9F%E5%88%97/</link>
+      <link>https://guyi2020.github.io/blog/post/%E9%98%9F%E5%88%97/</link>
       <pubDate>Sun, 27 Dec 2020 21:40:17 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/%E9%98%9F%E5%88%97/</guid>
+      <guid>https://guyi2020.github.io/blog/post/%E9%98%9F%E5%88%97/</guid>
       <description>消息队列 使用消息队列的好处 解耦 ❗ 允许独立扩展或者修改前后处理过程，只要确保它们遵守同样的接口约束 可恢复性 系统的部分组件失败时，不会危及到整个</description>
     </item>
     

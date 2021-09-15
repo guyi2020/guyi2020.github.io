@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/categories/</link>
+    <link>https://guyi2020.github.io/blog/categories/</link>
     <description>Recent content in Categories on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 09:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>技术</title>
-      <link>https://guyi2020.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Tue, 15 Jun 2021 12:08:00 +0800</pubDate>
+      <link>https://guyi2020.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Thu, 24 Jun 2021 09:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>category-2</title>
-      <link>https://guyi2020.github.io/categories/category-2/</link>
+      <link>https://guyi2020.github.io/blog/categories/category-2/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/category-2/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/category-2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>category-3</title>
-      <link>https://guyi2020.github.io/categories/category-3/</link>
+      <link>https://guyi2020.github.io/blog/categories/category-3/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/category-3/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/category-3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Theme preview</title>
-      <link>https://guyi2020.github.io/categories/theme-preview/</link>
+      <link>https://guyi2020.github.io/blog/categories/theme-preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/theme-preview/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/theme-preview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>https://guyi2020.github.io/categories/shortcodes/</link>
+      <link>https://guyi2020.github.io/blog/categories/shortcodes/</link>
       <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/shortcodes/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/shortcodes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syntax Highlighting</title>
-      <link>https://guyi2020.github.io/categories/syntax-highlighting/</link>
+      <link>https://guyi2020.github.io/blog/categories/syntax-highlighting/</link>
       <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/categories/syntax-highlighting/</guid>
+      <guid>https://guyi2020.github.io/blog/categories/syntax-highlighting/</guid>
       <description></description>
     </item>
     

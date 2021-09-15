@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nodejs on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/tags/nodejs/</link>
+    <link>https://guyi2020.github.io/blog/tags/nodejs/</link>
     <description>Recent content in nodejs on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Jun 2021 13:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 13:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nodejs多版本</title>
-      <link>https://guyi2020.github.io/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</link>
+      <link>https://guyi2020.github.io/blog/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</link>
       <pubDate>Thu, 10 Jun 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://guyi2020.github.io/blog/post/nodejs%E5%A4%9A%E7%89%88%E6%9C%AC/</guid>
       <description>1.下载安装 npm install -g n 2.下载指定版本(后面跟版本号) sudo n 14.15.0 3.下载最新版本 sudo n latest 4.显示已安装哪些版本 n ls 5.切换使用版本(后面跟版本号) sudo</description>
     </item>
     

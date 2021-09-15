@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MongoDB on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/tags/mongodb/</link>
+    <link>https://guyi2020.github.io/blog/tags/mongodb/</link>
     <description>Recent content in MongoDB on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker安装MongoDB</title>
-      <link>https://guyi2020.github.io/post/docker%E5%AE%89%E8%A3%85mongodb/</link>
+      <link>https://guyi2020.github.io/blog/post/docker%E5%AE%89%E8%A3%85mongodb/</link>
       <pubDate>Tue, 15 Jun 2021 12:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/post/docker%E5%AE%89%E8%A3%85mongodb/</guid>
+      <guid>https://guyi2020.github.io/blog/post/docker%E5%AE%89%E8%A3%85mongodb/</guid>
       <description>下载镜像 docker pull mongo:latest 运行容器 docker run -itd --name mongo -p 27017:27017 mongo --auth 设置用户和密码 docker exec -it mongo mongo admin 创建一个名为 admin，密码为 123456 的用户 db.createUser({ user:&#39;admin&#39;,pwd:&#39;123456&#39;,roles:[ { role:&#39;userAdminAnyDatabase&#39;, db: &#39;admin&#39;},&amp;quot;readWriteAnyDatabase&amp;quot;]}); 尝试用创建用户进行连接 db.auth(&#39;admin&#39;,</description>
     </item>
     

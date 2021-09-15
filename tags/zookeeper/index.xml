@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zookeeper on 古一 - 个人博客</title>
+    <link>https://guyi2020.github.io/blog/tags/zookeeper/</link>
+    <description>Recent content in zookeeper on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 11 Jun 2021 12:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装zookeeper扩展</title>
+      <link>https://guyi2020.github.io/blog/post/%E5%AE%89%E8%A3%85zookeeper%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Fri, 11 Jun 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://guyi2020.github.io/blog/post/%E5%AE%89%E8%A3%85zookeeper%E6%89%A9%E5%B1%95/</guid>
+      <description>扩展下载地址 http://pecl.php.net/package/zookeeper 注意：dev 是远程分支的名称 zookeeper稳定版下载地址 https://downloads.apache.org/zookeeper/stable/ brew install automake</description>
+    </item>
+    
+  </channel>
+</rss>
