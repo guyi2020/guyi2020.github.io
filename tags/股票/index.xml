@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>股票 on 古一 - 个人博客</title>
+    <link>/tags/%E8%82%A1%E7%A5%A8/</link>
+    <description>Recent content in 股票 on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 27 Dec 2020 21:40:17 +0800</lastBuildDate><atom:link href="/tags/%E8%82%A1%E7%A5%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>量化交易</title>
+      <link>/post/money/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/</link>
+      <pubDate>Sun, 27 Dec 2020 21:40:17 +0800</pubDate>
+      
+      <guid>/post/money/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/</guid>
+      <description>选股 1 多因子选股 多因子选股是最经典的选股方法，该方法采用一系列的因子（比如市盈率、市净率、市销率等）作为选股标准，满足这些因子的股票被买入，</description>
+    </item>
+    
+  </channel>
+</rss>

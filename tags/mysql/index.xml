@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/blog/tags/mysql/</link>
+    <link>/tags/mysql/</link>
     <description>Recent content in MySQL on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 May 2021 13:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 13:08:00 +0800</lastBuildDate><atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL主从复制</title>
-      <link>https://guyi2020.github.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
+      <link>/post/mysql/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Sun, 23 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/blog/post/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
+      <guid>/post/mysql/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</guid>
       <description>1. 概念 MySQL数据库自身提供的主从复制功能可以方便的实现数据的多处自动备份，实现数据库的拓展。多个数据备份不仅可以加强数据的安全性，通过实</description>
     </item>
     
     <item>
       <title>MySQL中的共享锁与排他锁</title>
-      <link>https://guyi2020.github.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</link>
+      <link>/post/mysql/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</link>
       <pubDate>Fri, 21 May 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/blog/post/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</guid>
+      <guid>/post/mysql/mysql%E5%85%B1%E4%BA%AB%E9%94%81%E4%B8%8E%E6%8E%92%E4%BB%96%E9%94%81/</guid>
       <description>1. 概念 MySQL中的行级锁,表级锁,页级锁中介绍过，行级锁是Mysql中锁定粒度最细的一种锁，行级锁能大大减少数据库操作的冲突。行级锁分为共</description>
     </item>
     
     <item>
       <title>MySQL优化</title>
-      <link>https://guyi2020.github.io/blog/post/mysql%E4%BC%98%E5%8C%96/</link>
+      <link>/post/mysql/mysql%E4%BC%98%E5%8C%96/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/blog/post/mysql%E4%BC%98%E5%8C%96/</guid>
+      <guid>/post/mysql/mysql%E4%BC%98%E5%8C%96/</guid>
       <description>1. 选择优化的数据类型 更小的数据类型 因为它们占用更少的磁盘，内存和CPU缓存，并且处理时需要的CPU周期更少。 如果无法确认哪个数据类型好，就选</description>
     </item>
     
     <item>
       <title>MySQL慢SQL问题</title>
-      <link>https://guyi2020.github.io/blog/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</link>
+      <link>/post/mysql/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/blog/post/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</guid>
+      <guid>/post/mysql/mysql%E6%85%A2sql%E9%97%AE%E9%A2%98/</guid>
       <description>1. SQL 编写导致的慢 SQL 优化 字段类型转换导致不用索引，如字符串类型的不用引号，数字类型的用引号，这可能导致用不到索引扫描全表 不支持函数转换，字段前</description>
     </item>
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dubbo on 古一 - 个人博客</title>
+    <link>/tags/dubbo/</link>
+    <description>Recent content in dubbo on 古一 - 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Jun 2021 09:08:00 +0800</lastBuildDate><atom:link href="/tags/dubbo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装zookeeper</title>
+      <link>/post/%E5%AE%89%E8%A3%85dubbo-php/</link>
+      <pubDate>Thu, 24 Jun 2021 09:08:00 +0800</pubDate>
+      
+      <guid>/post/%E5%AE%89%E8%A3%85dubbo-php/</guid>
+      <description>下载 https://archive.apache.org/dist/zookeeper/zookeeper-3.4.9/ 编译安装 ./configure --with-php-config=/usr/local/php/bin/php-config demo-provider start /usr/local/src/dubbo-php-framework/demo/demo-provider php ./bin/app_admin.php demo-provider start /usr/local/src/dubbo-php-framework/demo/demo-consumer/server /usr/local/src/dubbo-php-framework/agent/src/c/release/agent_server netstat -anp | grep 2181 yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel cat /var/fsof/provider/example_swoole.log /usr/local/src/zookeeper-3.4.9/bin/zkServer.sh start /usr/local/php/bin/php /usr/local/src/dubbo-php-framework/bin/app_admin.php demo-provider start /usr/local/php/bin/php /usr/local/src/dubbo-php-framework/demo/demo-consumer/server/Consumer.php cd /usr/local/src/dubbo-php-framework/agent/src/c/release sh start_agent_server.sh vim /etc/profile export LD_LIBRARY_PATH=/usr/local/lib source /etc/profile sh start_agent_server.sh http://tool.chinaz.com/tools/urlencode.aspx vim consumer/proxy/ProxyFactory.php docker run &amp;ndash;name mysql-test &amp;ndash;privileged=true /usr/local/php/bin/php /usr/local/src/dubbo-php-framework/config/global/conf/fsof.ini</description>
+    </item>
+    
+  </channel>
+</rss>

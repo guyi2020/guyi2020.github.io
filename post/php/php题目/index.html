@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP题目 - 古一 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="古一" /><meta name="description" content="业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购" /><meta name="keywords" content="古一, 博客, 网站" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="/post/php/php%E9%A2%98%E7%9B%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PHP题目" />
+<meta property="og:description" content="业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/php/php%E9%A2%98%E7%9B%AE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-25T13:08:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-25T13:08:00&#43;08:00" />
+
+<meta itemprop="name" content="PHP题目">
+<meta itemprop="description" content="业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购"><meta itemprop="datePublished" content="2021-05-25T13:08:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-25T13:08:00&#43;08:00" />
+<meta itemprop="wordCount" content="1726">
+<meta itemprop="keywords" content="PHP,面试题," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP题目"/>
+<meta name="twitter:description" content="业务问题 1. 商城秒杀的实现? ​ 首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个： 高并发对数据库产生的压力 利用缓存来处理抢购"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">古一</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">古一</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PHP题目</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-05-25 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 约 1726 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-商城秒杀的实现">1. 商城秒杀的实现?</a></li>
+        <li><a href="#2-接口安全方面是怎么处理">2. 接口安全方面是怎么处理？</a></li>
+        <li><a href="#3-在工作中遇到什么困难">3. 在工作中遇到什么困难?</a></li>
+        <li><a href="#4-索引的优缺点">4. 索引的优缺点?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>业务问题</p>
+</blockquote>
+<h2 id="1-商城秒杀的实现">1. 商城秒杀的实现?</h2>
+<p>​	首先，抢购、秒杀是如今很常见的一个应用场景，主要需要解决的问题有两个：</p>
+<ol>
+<li>高并发对数据库产生的压力</li>
+</ol>
+<blockquote>
+<p>利用缓存来处理抢购，避免直接操作数据库。例如：Redis。</p>
+</blockquote>
+<ol start="2">
+<li>竞争状态下如何解决库存的正确减少（&ldquo;超卖&quot;问题）</li>
+</ol>
+<blockquote>
+<p>如何保证库存的正确性？</p>
+</blockquote>
+<p>要把秒杀的商品放入到队列，因为pop操作是原子性的，即使很多用户访问，也是依次执行。文件锁和事务在高并发下性能下降很快，所以不可取。</p>
+<p>通过ajax调用接口，也可能会出现一个用户抢多次的情况，这时候需要加上一个排队队列，抢购结果队列，库存队列。先将用户进入队列，用一个线程循环处理从排队队列取出一个用户，判断用户是否在抢购结果队列，如果在，则已经抢购。否则未抢购，库存减1，写入数据库，将用户入结果队列。</p>
+<h2 id="2-接口安全方面是怎么处理">2. 接口安全方面是怎么处理？</h2>
+<p>使用HTTP的POST方式,对固定参数+附加参数进行数字签名,使用的是md5加密,比如:我想通过标题获取一个信息,在客户端使用  信息标题+日期+双方约定好的一个key通过md5加密生成一个签名(sign),然后作为参数传递到服务器端,服务器端使用同样的方法进行校验,如何接受过来的sign和我们通过算法算的值相同，证明是一个正常的接口请求，我们才会返回相应的接口数据。</p>
+<blockquote>
+<p>PHP实现代码如下：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">actionGetSign</span><span class="p">(){</span>
+        <span class="nv">$secret</span> <span class="o">=</span> <span class="s1">&#39;hysjryg&#39;</span><span class="p">;</span>
+        <span class="nv">$username</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">];</span>
+        <span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+        <span class="nv">$rand</span> <span class="o">=</span> <span class="nx">rand</span><span class="p">(</span><span class="mi">11111</span><span class="p">,</span><span class="mi">99999</span><span class="p">);</span>
+        <span class="nv">$time</span> <span class="o">=</span> <span class="nx">time</span><span class="p">();</span>
+        <span class="c1">//拼到数组里
+</span><span class="c1"></span>        <span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="nv">$username</span><span class="p">,</span>
+            <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">,</span>
+            <span class="s1">&#39;rand&#39;</span><span class="o">=&gt;</span> <span class="nv">$rand</span><span class="p">,</span>
+            <span class="s1">&#39;time&#39;</span><span class="o">=&gt;</span> <span class="nv">$time</span>
+        <span class="p">];</span>
+        <span class="c1">//进行排序
+</span><span class="c1"></span>        <span class="nx">ksort</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span>
+        <span class="nv">$str</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$arr</span> <span class="k">as</span> <span class="nv">$k</span><span class="o">=&gt;</span><span class="nv">$v</span><span class="p">){</span>
+            <span class="nv">$str</span> <span class="o">.=</span> <span class="s2">&#34;</span><span class="si">$k</span><span class="s2">=</span><span class="si">$v</span><span class="s2">&amp;&#34;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nv">$last_str</span><span class="o">=</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="c1">//进行md5加密
+</span><span class="c1"></span>        <span class="nv">$md_str</span><span class="o">=</span><span class="nx">md5</span><span class="p">(</span><span class="nv">$last_str</span><span class="p">);</span>
+        <span class="nv">$sign</span><span class="o">=</span><span class="nx">md5</span><span class="p">(</span><span class="nv">$md_str</span><span class="o">.</span><span class="nv">$secret</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$sign</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-在工作中遇到什么困难">3. 在工作中遇到什么困难?</h2>
+<p>在工作我主要遇到这几个问题比较难处理：</p>
+<ol>
+<li>
+<p>我之前工作的时候发现经常会出现一些临时需求打乱了我的计划，搞得有时候这个任务还没完成，又得去做其他的任务，最后一天下来，大大小小的东西是很多，但是没有完成得非常好的，后面我总结了一下，我会把这些都添加优先级，遇到临时需求，按照优先级重新将已有任务和临时任务进行排版，保证在规定时间内有效率的完成优先级高的任务。</p>
+</li>
+<li>
+<p>在做项目需求时候，遇到理解能力欠佳的人，沟通时容易被气到，影响自己的情绪，最后反倒还不能到达需要的效果。后面，每次到这种时候，我一般会借助一些纸质的、更加形象的东西，让双方都认同的、都能明白的一种方式来进行沟通，后面减少了很多不必须的麻烦。大家都知道，对于程序员来说，改需求是一件很痛苦的事情，所以前期的沟通工作很重要。</p>
+</li>
+<li>
+<p>还有一件事时，我以前的领导不太懂技术，所以每次出一个新的需求出来，总是要求我们在很短的时间内完成，完不成我们就会被怀疑能力有问题。当然，每个领导都希望自己的员工能够尽快的完成任务，降低成本，提高效率。这时候我会把我们的需求细化，把其中的重点、难点都列出来，做好时间规划，耐心的跟领导沟通，项目每个点的重要性和时间的花费比例，确保在这个规划的时间点内保质保量的完成任务。慢慢的也得到了领导的认可，其实领导也不是一味的不通情理，只要把东西计划好了，以最小的代价换取最高的价值，每个人都是很容易理解得</p>
+</li>
+</ol>
+<h2 id="4-索引的优缺点">4. 索引的优缺点?</h2>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>a）可以保证数据库表中每一行的数据的唯一性</p>
+<p>b）可以大大加快数据的索引速度</p>
+<p>c）加速表与表之间的连接，物别是在实现数据的参考完事性方面特别有意义</p>
+<p>d）在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的时间</p>
+<p>f）通过使用索引，可以在时间查询的过程中，使用优化隐藏器，提高系统的性能</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>a)  创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加</p>
+<p>b)  索引需要占物理空间，除了数据表占用数据空间之外，每一个索引还要占用一定的物理空间，如果需要建立聚簇索引，那么需要占用的空间会更大</p>
+<p>c)  以表中的数据进行增、删、改的时候，索引也要动态的维护，这就降低了整数的维护速度</p>
+<p>d)  建立索引的原则</p>
+<p>e)  在经常需要搜索的列上，可以加快搜索的速度</p>
+<p>f)  在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构</p>
+<p>g)  在经常用在连接的列上，这些列主要是一外键，可以加快连接的速度</p>
+<p>h)  在经经常需要根据范围进行搜索的列上创建索引，国为索引已经排序，其指定的范围是连续的</p>
+<p>i)  在经常需要排序的列上，国为索引已经排序，这样井底可以利用索引的排序，加快排序井底时间</p>
+<p>j)  在经常使用在where子句中的列上，加快条件的判断速度</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">古一</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-05-25
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">PHP</a>
+          <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/php/php-amqplib%E5%BA%93%E6%93%8D%E4%BD%9Crabbitmq/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">php-amqplib库操作RabbitMQ</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/rabbitmq/">
+            <span class="next-text nav-default">RabbitMQ消息队列</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>古一</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

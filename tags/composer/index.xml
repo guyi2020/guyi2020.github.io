@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Composer on 古一 - 个人博客</title>
-    <link>https://guyi2020.github.io/blog/tags/composer/</link>
+    <link>/tags/composer/</link>
     <description>Recent content in Composer on 古一 - 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 23 Apr 2021 13:08:00 +0800</lastBuildDate><atom:link href="https://guyi2020.github.io/blog/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 13:08:00 +0800</lastBuildDate><atom:link href="/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Composer使用</title>
-      <link>https://guyi2020.github.io/blog/post/composer%E4%BD%BF%E7%94%A8/</link>
+      <link>/post/php/composer%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 23 Apr 2021 13:08:00 +0800</pubDate>
       
-      <guid>https://guyi2020.github.io/blog/post/composer%E4%BD%BF%E7%94%A8/</guid>
+      <guid>/post/php/composer%E4%BD%BF%E7%94%A8/</guid>
       <description>Composer 使用1.0版本 现在composer最新版本是2.0了，有下老项目就需要1.0的版本，不然是无法安装依赖的。 下载地址：https://get</description>
     </item>
     

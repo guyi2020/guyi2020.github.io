@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://guyi2020.github.io/blog/sitemap.xml
+Sitemap: sitemap.xml

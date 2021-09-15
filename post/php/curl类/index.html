@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CURL类 - 古一 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="古一" /><meta name="description" content="请求方法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 public static function sendRequest($url, $params = [], $method = &amp;#39;POST&amp;#39;, $options" /><meta name="keywords" content="古一, 博客, 网站" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="/post/php/curl%E7%B1%BB/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CURL类" />
+<meta property="og:description" content="请求方法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 public static function sendRequest($url, $params = [], $method = &#39;POST&#39;, $options" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/php/curl%E7%B1%BB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-30T12:08:00&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-30T12:08:00&#43;08:00" />
+
+<meta itemprop="name" content="CURL类">
+<meta itemprop="description" content="请求方法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 public static function sendRequest($url, $params = [], $method = &#39;POST&#39;, $options"><meta itemprop="datePublished" content="2021-06-30T12:08:00&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-30T12:08:00&#43;08:00" />
+<meta itemprop="wordCount" content="323">
+<meta itemprop="keywords" content="PHP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CURL类"/>
+<meta name="twitter:description" content="请求方法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 public static function sendRequest($url, $params = [], $method = &#39;POST&#39;, $options"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">古一</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">古一</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CURL类</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            </div>
+          <span class="more-meta"> 约 323 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#请求方法">请求方法</a></li>
+        <li><a href="#get请求">GET请求</a></li>
+        <li><a href="#post请求">POST请求</a></li>
+        <li><a href="#设置头部参数">设置头部参数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <ol>
+<li>
+<h2 id="请求方法">请求方法</h2>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">sendRequest</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$method</span> <span class="o">=</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<span class="p">{</span>
+    <span class="nv">$method</span> <span class="o">=</span> <span class="nx">strtoupper</span><span class="p">(</span><span class="nv">$method</span><span class="p">);</span>
+    <span class="nv">$protocol</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="nv">$query_string</span> <span class="o">=</span> <span class="nx">is_array</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span> <span class="o">?</span> <span class="nx">http_build_query</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span> <span class="o">:</span> <span class="nv">$params</span><span class="p">;</span>
+    <span class="nv">$ch</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span>
+    <span class="nv">$defaults</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;GET&#39;</span> <span class="o">==</span> <span class="nv">$method</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$geturl</span> <span class="o">=</span> <span class="nv">$query_string</span> <span class="o">?</span> <span class="nv">$url</span> <span class="o">.</span> <span class="p">(</span><span class="nx">stripos</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="s2">&#34;?&#34;</span><span class="p">)</span> <span class="o">!==</span> <span class="k">false</span> <span class="o">?</span> <span class="s2">&#34;&amp;&#34;</span> <span class="o">:</span> <span class="s2">&#34;?&#34;</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$query_string</span> <span class="o">:</span> <span class="nv">$url</span><span class="p">;</span>
+        <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_URL</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$geturl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_URL</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$url</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_POST</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$method</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$query_string</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_HEADER</span><span class="p">]</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_USERAGENT</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.98 Safari/537.36&#34;</span><span class="p">;</span>
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_FOLLOWLOCATION</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_CONNECTTIMEOUT</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_TIMEOUT</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;https&#39;</span> <span class="o">==</span> <span class="nv">$protocol</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">]</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="nv">$defaults</span><span class="p">[</span><span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">]</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+
+    <span class="nx">curl_setopt_array</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="p">(</span><span class="k">array</span><span class="p">)</span><span class="nv">$options</span> <span class="o">+</span> <span class="nv">$defaults</span><span class="p">);</span>
+    <span class="nv">$ret</span> <span class="o">=</span> <span class="nx">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+    <span class="nv">$err</span> <span class="o">=</span> <span class="nx">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="k">false</span> <span class="o">===</span> <span class="nv">$ret</span> <span class="o">||</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$err</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$errno</span> <span class="o">=</span> <span class="nx">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+        <span class="nv">$info</span> <span class="o">=</span> <span class="nx">curl_getinfo</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+        <span class="nx">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">&#39;ret&#39;</span>   <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+            <span class="s1">&#39;errno&#39;</span> <span class="o">=&gt;</span> <span class="nv">$errno</span><span class="p">,</span>
+            <span class="s1">&#39;msg&#39;</span>   <span class="o">=&gt;</span> <span class="nv">$err</span><span class="p">,</span>
+            <span class="s1">&#39;info&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$info</span><span class="p">,</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+    <span class="nx">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="s1">&#39;ret&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;msg&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ret</span><span class="p">,</span>
+    <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<h2 id="get请求">GET请求</h2>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<span class="p">{</span>
+    <span class="nv">$req</span> <span class="o">=</span> <span class="nx">self</span><span class="o">::</span><span class="na">sendRequest</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nv">$options</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">?</span> <span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;msg&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>
+<h2 id="post请求">POST请求</h2>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">post</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<span class="p">{</span>
+    <span class="nv">$req</span> <span class="o">=</span> <span class="nx">self</span><span class="o">::</span><span class="na">sendRequest</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$params</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="nv">$options</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;ret&#39;</span><span class="p">]</span> <span class="o">?</span> <span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;msg&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>
+<h2 id="设置头部参数">设置头部参数</h2>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="nv">$option</span><span class="p">[</span><span class="nx">CURLOPT_HTTPHEADER</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+		<span class="s1">&#39;Content-Type: application/json&#39;</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">古一</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-06-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">PHP</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/golang/goroutine/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">goroutine</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AE%89%E8%A3%85dubbo-php/">
+            <span class="next-text nav-default">安装zookeeper</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>古一</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
